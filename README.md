@@ -119,12 +119,12 @@ Loop: Program terus berjalan hingga pengguna memilih `k` untuk keluar.
 ![foto](https://github.com/FajarMhr24/flochart/blob/9e504339bd79a73cc21b47f625746d38151300fa/Screenshot%202024-11-24%20145521.png)
 
 ## Output
-![foto](https://github.com/FajarMhr24/foto/blob/50d981b35a6b523003c86018e6d044cea29b22e5/Screenshot%202024-11-24%20164109.png)
+![foto](https://github.com/FajarMhr24/foto/blob/401b430c11f856b56ceaf2f1edd39c6405c377f2/Screenshot%202024-11-24%20164109.png)
 
-![foto](https://github.com/FajarMhr24/foto/blob/50d981b35a6b523003c86018e6d044cea29b22e5/Screenshot%202024-11-24%20164125.png)
+![foto](https://github.com/FajarMhr24/foto/blob/401b430c11f856b56ceaf2f1edd39c6405c377f2/Screenshot%202024-11-24%20164125.png)
 
-![foto](https://github.com/FajarMhr24/foto/blob/50d981b35a6b523003c86018e6d044cea29b22e5/Screenshot%202024-11-24%20164136.png)
+![foto](https://github.com/FajarMhr24/foto/blob/401b430c11f856b56ceaf2f1edd39c6405c377f2/Screenshot%202024-11-24%20164136.png)
 
-![foto](https://github.com/FajarMhr24/foto/blob/50d981b35a6b523003c86018e6d044cea29b22e5/Screenshot%202024-11-24%20164150.png)
+![foto](https://github.com/FajarMhr24/foto/blob/401b430c11f856b56ceaf2f1edd39c6405c377f2/Screenshot%202024-11-24%20164150.png)
 
-![foto](https://github.com/FajarMhr24/foto/blob/50d981b35a6b523003c86018e6d044cea29b22e5/Screenshot%202024-11-24%20164257.png)
+![foto](https://github.com/FajarMhr24/foto/blob/401b430c11f856b56ceaf2f1edd39c6405c377f2/Screenshot%202024-11-24%20181158.png)
