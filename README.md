@@ -14,77 +14,58 @@ nilai_data = {}
 ```
 `nilai_data` adalah dictionary kosong yang digunakan untuk menyimpan data mahasiswa.
 
-### 2. Fungsi tampilkan_data
+### 2. Perulangan utama
+```python
+while True:
+    print("\n|Program Input Nilai|")
+    print("[(L)Lihat, (T)Tambah, (U)Ubah, (H)Hapus, (C)Cari, (K)Keluar]")
+    pilihan = input("Menu: ").lower()
+```
+Menu ditampilkan setiap iterasi untuk memberi pengguna opsi seperti melihat, menambah, mengubah, menghapus, mencari data, atau keluar dari program. Input pengguna (`pilihan`) diubah menjadi huruf kecil (.`lower`()) untuk mempermudah perbandingan.
+
+### 3. input L(LIHAT)
 
 ```python
-def tampilkan_data(data=None):
-    data = data or nilai_data
-    if not data:
-        print("=" * 64)
-        print("No | Nama\t| NIM  | Tugas | UTS | UAS |  Nilai Akhir      |")
-        print("=" * 64)
-        print("   |                      Belum ada data                       |")
-        print("=" * 64)
-        return
-    print("No | Nama\t|    NIM   | Tugas | UTS | UAS |  Nilai Akhir |")
-    print("=" * 63)
-    for i, (nim, d) in enumerate(data.items(), 1):
-        print(f"{i}  | {d['nama']}\t| {nim}   | {d['tugas']}  | {d['uts']}| {d['uas']}| {d['nilai_akhir']:.2f}        |")
-    print("=" * 63)
+if pilihan == 'l':
+    if not nilai_data:
+
 ```
-jika data kosong akan menampilan tabel yang berisi "belum ada data"
+`not nilai_data`: Mengecek apakah `nilai_data` kosong. Jika iya, tampilkan pesan bahwa belum ada data.
+Jika ada data, loop melalui setiap item dalam `nilai_data` untuk ditampilkan dalam tabel, dengan perhitungan nilai akhir (`nilai_akhir`).
 
-jika data terisi akan menampilkan
 
-No: Nomor urut.
-
-Nama: Nama mahasiswa.
-
-NIM: Nomor Induk Mahasiswa.
-
-Tugas, UTS, UAS: Nilai tugas, UTS, dan UAS.
-
-Nilai Akhir: Nilai rata-rata yang dihitung dengan rumus:
-
-nilai_akhir = (tugas x 0.3) + (uts x 0.35) + (uas x 0.3)
-
-### 3. Fungsi input_data
-
+### 4. input T(TAMBAH)
 ```python
-def input_data(nim=None):
-    nim = nim or input("NIM: ")
-    nama = input("Nama: ")
-    tugas, uts, uas = (float(input(f"Nilai {y}: ")) for y in ["Tugas", "UTS", "UAS"])
-    nilai_data[nim] = {"nama": nama, "tugas": tugas, "uts": uts, "uas": uas, "nilai_akhir": (tugas * 0.3) + (uts * 0.35) + (uas * 0.35)}
-    print("Data berhasil disimpan!")
-```
-Menambahkan atau memperbarui data mahasiswa.
+elif pilihan == 't':
+    nim = input("NIM: ")
 
-### 4.  Fungsi hhapus_data
+```
+Meminta pengguna memasukkan NIM sebagai kunci data.
+
+Memasukkan nama dan nilai (tugas, UTS, UAS) sebagai nilai pada dictionary `nilai_data[nim]`.
+
+Nilai akhir dihitung menggunakan rumus:
 ```python
-def hapus_data():
-    if not nilai_data: return print("Belum ada data.")
-    nim = input("Masukkan NIM data yang ingin dihapus: ")
-    if nim in nilai_data:
-        del nilai_data[nim]
-        print("Data berhasil dihapus!")
-    else:
-        print("Data tidak ditemukan.")
-    tampilkan_data()
+sum(nilai_data[nim][x] * w for x, w in zip(["tugas", "uts", "uas"], [0.3, 0.35, 0.35]))
 ```
-Menghapus data mahasiswa berdasarkan NIM.
 
-### 5. Fungsi cari_data
+
+### 5. input U(UBAH)
 ```python
-def cari_data():
-    if not nilai_data: return print("Belum ada data.")
-    keyword = input("Masukkan nama atau NIM yang ingin dicari: ").lower()
-    hasil = {nim: d for nim, d in nilai_data.items() if keyword in nim.lower() or keyword in d['nama'].lower()}
-    tampilkan_data(hasil) if hasil else print("Data tidak ditemukan.")
-```
-Mencari data berdasarkan NIM atau nama.
+elif pilihan == 'u':
+    nim = input("Masukkan NIM data yang ingin diubah: ")
 
-### 6. Menu utama
+```
+Meminta pengguna memasukkan NIM data yang akan diubah.
+
+Jika NIM ditemukan, data lama akan digantikan dengan data baru yang dimasukkan pengguna.
+
+Nilai akhir diperbarui menggunakan logika yang sama dengan menambah data.
+
+Jika NIM tidak ditemukan, tampilkan pesan kesalahan.
+
+
+### 6. input H(HAPUS)
 ```python
 while True:
     print("\n|Program Input Nilai|")
@@ -111,6 +92,22 @@ while True:
     else:
         print("Pilihan tidak valid!")
 ```
+
+### 7. input C(CARI)
+```python
+elif pilihan == 'c':
+    keyword = input("Masukkan nama atau NIM yang ingin dicari: ").lower()
+```
+Meminta pengguna memasukkan kata kunci (`keyword`) untuk mencari data berdasarkan `NIM` atau `nama`.
+
+hasil adalah dictionary baru yang menyimpan data yang cocok dengan kata kunci.
+
+Meminta pengguna memasukkan NIM data yang akan dihapus.
+
+Jika NIM ditemukan, data dihapus menggunakan `del nilai_data[nim]`.
+
+Jika tidak ditemukan, tampilkan pesan kesalahan.
+
 Menyediakan menu interaktif untuk mengakses fungsi program.
 
 Loop: Program terus berjalan hingga pengguna memilih `k` untuk keluar.
