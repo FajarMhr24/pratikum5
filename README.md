@@ -67,31 +67,16 @@ Jika NIM tidak ditemukan, tampilkan pesan kesalahan.
 
 ### 6. input H(HAPUS)
 ```python
-while True:
-    print("\n|Program Input Nilai|")
-    print("[(L)Lihat, (T)Tambah, (U)Ubah, (H)Hapus, (C)Cari, (K)Keluar]")
-    pilihan = input("Menu: ").lower()
+elif pilihan == 'h':
+    nim = input("Masukkan NIM data yang ingin dihapus: ")
 
-    if pilihan == 'l':
-        tampilkan_data()
-    elif pilihan == 't':
-        input_data()
-    elif pilihan == 'u':
-        nim = input("Masukkan NIM data yang ingin diubah: ")
-        if nim in nilai_data:
-            input_data(nim)
-        else:
-            print("Data tidak ditemukan.")
-    elif pilihan == 'h':
-        hapus_data()
-    elif pilihan == 'c':
-        cari_data()
-    elif pilihan == 'k':
-        print("Keluar dari program.")
-        break
-    else:
-        print("Pilihan tidak valid!")
 ```
+
+Meminta pengguna memasukkan NIM data yang akan dihapus.
+
+Jika NIM ditemukan, data dihapus menggunakan `del nilai_data[nim]`.
+
+Jika tidak ditemukan, tampilkan pesan kesalahan
 
 ### 7. input C(CARI)
 ```python
@@ -99,12 +84,6 @@ elif pilihan == 'c':
     keyword = input("Masukkan nama atau NIM yang ingin dicari: ").lower()
 ```
 Meminta pengguna memasukkan kata kunci (`keyword`) untuk mencari data berdasarkan `NIM` atau `nama`.
-
-hasil adalah dictionary baru yang menyimpan data yang cocok dengan kata kunci.
-
-Meminta pengguna memasukkan NIM data yang akan dihapus.
-
-Jika NIM ditemukan, data dihapus menggunakan `del nilai_data[nim]`.
 
 Jika tidak ditemukan, tampilkan pesan kesalahan.
 
